@@ -7,9 +7,9 @@
 <body>
 <h1 th:text="${title}"></h1>
 <table>
-    <tr th:each="emp : ${emplist}" th:object="${emp}">
+    <tr th:each="user : ${list}" th:object="${users}">
         <td th:text="*{id}"></td>
-        <td th:text="*{empname}"></td>
+        <td th:text="*{name}"></td>
     </tr>
 </table>
 </body>
