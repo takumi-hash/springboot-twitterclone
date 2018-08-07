@@ -1,8 +1,6 @@
 package com.example.twitterclone.controller;
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import com.example.twitterclone.domain.Employee;
 import com.example.twitterclone.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class EmployeeController {
     @Autowired
     private EmployeeRepository empRepository;
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/employees", method = RequestMethod.GET)
     public String index(Model model) {
         List<Employee> emplist=empRepository.findAll();
         model.addAttribute("emplist", emplist);
-        return "index";
+        return "emp";
     }
 }
